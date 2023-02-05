@@ -16,7 +16,7 @@
 		</tr>
 
 		<c:forEach var="tempOrder" items ="${orders}">
-        <form action='${pageContext.request.contextPath}/order/processorder' method='POST' >
+        <form action='${pageContext.request.contextPath}/manage/processorder' method='POST' >
             <tr>
                 <td>
                     ${tempOrder.id}
@@ -43,10 +43,16 @@
                 </td>
 
             </tr>
+
+            <input type="hidden" name="${_csrf.parameterName }" value="${_csrf.token }"/>
         </form>
 		</c:forEach>
 
 	</table>
+
+	<form:form action="${pageContext.request.contextPath}/logout" method ="POST">
+            	<input type="submit" value="Logout"/>
+     </form:form>
 
 </body>
 </html>

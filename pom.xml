@@ -15,13 +15,15 @@
 
   <properties>
     <springframework.version>5.2.1.RELEASE</springframework.version>
+
 <!--    <springframework.version>5.0.6.RELEASE</springframework.version>-->
 <!--    <springframework.version>4.3.3.RELEASE</springframework.version>-->
 
+    <springsecurity.version>5.2.1.RELEASE</springsecurity.version>
     <hibernate.version>5.4.1.Final</hibernate.version>
     <mysql.connector.version>5.1.45</mysql.connector.version>
     <c3po.version>0.9.5.2</c3po.version>
-    <!--    <c3po.version>5.1.2.Final</c3po.version>-->
+ <!--   <c3po.version>5.1.2.Final</c3po.version>-->
 
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <maven.compiler.source>1.8</maven.compiler.source>
@@ -54,6 +56,29 @@
 <!--      <artifactId>spring-aop</artifactId>-->
 <!--      <version>${springframework.version}</version>-->
 <!--    </dependency>-->
+
+
+    <!-- https://mvnrepository.com/artifact/org.springframework.security/spring-security-config -->
+    <!-- Spring Security -->
+    <!-- Spring-Security-web and spring-security-config -->
+    <dependency>
+      <groupId>org.springframework.security</groupId>
+      <artifactId>spring-security-web</artifactId>
+      <version>${springsecurity.version}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.springframework.security</groupId>
+      <artifactId>spring-security-config</artifactId>
+      <version>${springsecurity.version}</version>
+    </dependency>
+
+    <!-- Add Spring Security Taglibs support-->
+    <dependency>
+      <groupId>org.springframework.security</groupId>
+      <artifactId>spring-security-taglibs</artifactId>
+      <version>${springsecurity.version}</version>
+    </dependency>
 
     <!-- Add Jackson for JSON converters -->
     <dependency>

@@ -95,42 +95,42 @@ public class OrderController {
 
 
 
-    @GetMapping("/processorder")
-    public String getProcessorder(Model theModel){
-        List<Order> theOrders = orderService.getOrders(true);
-        if(theOrders == null )
-            theOrders=new ArrayList<>();
-
-//        List<MenuItem>  theMenuitems =menuService.getMenuItems();
-//        Map<String,Double> price =getPrice(theMenuitems);
-//        for(int i =0 ;i<theOrders.size();i++) {
-//            theOrders.get(i).setContents(getTotalPrice(theOrders.get(i).getContents(), price));
-//        }
-        theModel.addAttribute("orders",theOrders);
-
-
-        List<String> statuses = new ArrayList<String>();
-        statuses.add("order accepted");
-        statuses.add("payment received");
-        statuses.add("being prepared");
-        statuses.add("ready for collection");
-        theModel.addAttribute("statuses", statuses);
-
-         return  "processorder";
-
-    }
-
-
-    @PostMapping("/processorder")
-    public String updateProcessorder(@RequestParam("orderId") @PathVariable int orderId,
-                                     @RequestParam("orderStatus") @PathVariable String orderStatus){
-
-        Order theOrder =orderService.getOrder(orderId,false);
-        theOrder.setStatus(orderStatus);
-        orderService.updatedOrderStatus(theOrder);
-
-        return  "redirect:/order/processorder";
-    }
+//    @GetMapping("/processorder")
+//    public String getProcessorder(Model theModel){
+//        List<Order> theOrders = orderService.getOrders(true);
+//        if(theOrders == null )
+//            theOrders=new ArrayList<>();
+//
+////        List<MenuItem>  theMenuitems =menuService.getMenuItems();
+////        Map<String,Double> price =getPrice(theMenuitems);
+////        for(int i =0 ;i<theOrders.size();i++) {
+////            theOrders.get(i).setContents(getTotalPrice(theOrders.get(i).getContents(), price));
+////        }
+//        theModel.addAttribute("orders",theOrders);
+//
+//
+//        List<String> statuses = new ArrayList<String>();
+//        statuses.add("order accepted");
+//        statuses.add("payment received");
+//        statuses.add("being prepared");
+//        statuses.add("ready for collection");
+//        theModel.addAttribute("statuses", statuses);
+//
+//         return  "processorder";
+//
+//    }
+//
+//
+//    @PostMapping("/processorder")
+//    public String updateProcessorder(@RequestParam("orderId") @PathVariable int orderId,
+//                                     @RequestParam("orderStatus") @PathVariable String orderStatus){
+//
+//        Order theOrder =orderService.getOrder(orderId,false);
+//        theOrder.setStatus(orderStatus);
+//        orderService.updatedOrderStatus(theOrder);
+//
+//        return  "redirect:/order/processorder";
+//    }
 
 
 

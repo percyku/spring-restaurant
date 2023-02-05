@@ -7,7 +7,7 @@
 		<jsp:include page="/WEB-INF/view/header.jsp" />
 		<h2>Order your food</h2>
 
-		<form action='${pageContext.request.contextPath}/order/getOrder' method='POST' >
+		<form:form action='${pageContext.request.contextPath}/order/getOrder' method='POST' >
 		<ul>
 		<c:forEach var="tempMenuItem" items ="${menuItems}">
 		    <li>
@@ -21,7 +21,10 @@
 		
 		</ul>
 		<input type='submit' />
-		</form>
-		
+		</form:form>
+
+		<form:form action="${pageContext.request.contextPath}/logout" method ="POST">
+        	<input type="submit" value="Logout"/>
+        </form:form>
 	</body>
 </html>
